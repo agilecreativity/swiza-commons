@@ -1,5 +1,5 @@
-(defproject b12n.swiza.commons "0.1.1"
-  :description "swiza-commons commonly used library"
+(defproject net.b12n/swiza-commons "0.1.2"
+  :description "Commonly used Clojure library"
   :url "http://github.com/agilecreativity/swiza-commons"
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
