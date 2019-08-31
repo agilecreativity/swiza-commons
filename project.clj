@@ -1,4 +1,4 @@
-(defproject b12n.swiza.commons "0.1.0"
+(defproject b12n.swiza.commons "0.1.1"
   :description "swiza-commons commonly used library"
   :url "http://github.com/agilecreativity/swiza-commons"
   :license {:name "Eclipse Public License"
@@ -18,7 +18,7 @@
                  [http-kit "2.3.0"]
                  [metosin/jsonista "0.2.2"]
                  [org.clojars.hozumi/clj-commons-exec "1.2.0"]
-                 [org.clojure/clojure "1.10.1"]]
+                 [org.clojure/clojure "1.9.0"]]
   :profiles {:dev {:global-vars {*warn-on-reflection* true
                                  *assert* true}}
              :1.9    {:dependencies [[org.clojure/clojure "1.9.0"]]}
