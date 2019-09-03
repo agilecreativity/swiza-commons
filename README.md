@@ -1,5 +1,8 @@
 ## swiza-commons
 
+[![Clojars Project](https://img.shields.io/clojars/v/net.b12n/swiza-commons.svg)](https://clojars.org/net.b12n/swiza-commons)
+[![Dependencies Status](https://jarkeeper.com/agilecreativity/swiza-commons/status.png)](https://jarkeeper.com/agilecreativity/swiza-commons)
+
 Common Clojure library that I use for different projects and hopefully something that compatible with GraalVM.
 
 ### Basic Usage
