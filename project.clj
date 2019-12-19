@@ -1,4 +1,4 @@
-(defproject net.b12n/swiza-commons "0.1.2"
+(defproject net.b12n/swiza-commons "0.1.3"
   :description "Commonly used Clojure library"
   :url "http://github.com/agilecreativity/swiza-commons"
   :license {:name "Eclipse Public License"
@@ -13,7 +13,7 @@
   :test-paths ["src/test/clojure"
                "src/test/java"]
   :dependencies [[aero "1.1.3"]
-                 [akvo/fs "20180904-152732.6dad3934"]
+                 [clj-commons/fs "1.5.1"]
                  [camel-snake-kebab "0.4.0"]
                  [http-kit "2.3.0"]
                  [metosin/jsonista "0.2.2"]
