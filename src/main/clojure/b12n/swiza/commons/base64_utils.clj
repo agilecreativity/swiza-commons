@@ -85,7 +85,6 @@
   (let [octets (sextets->octets (map base64-char->int string))]
     (apply str (map char octets))))
 
-
 (comment
   (def s0
     (str "Man is distinguished, not only by his reason, but by this singular passion from other "
@@ -94,4 +93,4 @@
   (def b (base64-encode s0))
   (def s1 (base64-decode b))
   (= s0 s1) ;;=> true
-  )
+)

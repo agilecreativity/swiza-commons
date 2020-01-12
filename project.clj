@@ -1,4 +1,4 @@
-(defproject net.b12n/swiza-commons "0.1.3"
+(defproject net.b12n/swiza-commons "0.1.4"
   :description "Commonly used Clojure library"
   :url "http://github.com/agilecreativity/swiza-commons"
   :license {:name "Eclipse Public License"
@@ -12,20 +12,13 @@
   :java-source-paths ["src/main/java"]
   :test-paths ["src/test/clojure"
                "src/test/java"]
-  :dependencies [[aero "1.1.3"]
+  :dependencies [[aero "1.1.4"]
                  [clj-commons/fs "1.5.1"]
-                 [camel-snake-kebab "0.4.0"]
-                 [http-kit "2.3.0"]
-                 [metosin/jsonista "0.2.2"]
-                 [org.clojars.hozumi/clj-commons-exec "1.2.0"]
+                 [camel-snake-kebab "0.4.1"]
+                 [metosin/jsonista "0.2.5"]
                  [org.clojure/clojure "1.9.0"]]
   :profiles {:dev {:global-vars {*warn-on-reflection* true
                                  *assert* true}}
              :1.9    {:dependencies [[org.clojure/clojure "1.9.0"]]}
              :1.10.1 {:dependencies [[org.clojure/clojure "1.10.1"]]}}
-  :aliases {"lint" ["do" ["cljfmt" "check"] ["eastwood"]]
-            "test-all" ["with-profile" "default:+1.9:+1.10" "test"]
-            "lint-and-test-all" ["do" ["lint"] ["test-all"]]
-            "test"   ["run" "-m" "circleci.test/dir" :project/test-paths]
-            "tests"  ["run" "-m" "circleci.test"]
-            "retest" ["run" "-m" "circleci.test.retest"]})
+  :aliases {"test-all" ["with-profile" "default:+1.9:+1.10.1" "test"]})
