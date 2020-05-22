@@ -3,9 +3,9 @@
    [aero.core :refer [read-config]]
    [camel-snake-kebab.core :as csk]
    [clojure.java.io :as io]
-   [clojure.walk :refer [postwalk]]
-   [jsonista.core :refer [read-value write-value object-mapper]]
-   [me.raynes.fs :as fs :refer [expand-home normalized]]))
+   [clojure.walk :refer [postwalk] :as clojure.walk]
+   [jsonista.core :as json]
+   [me.raynes.fs :as fs]))
 
 (defn expand-path
   [filename]
@@ -19,17 +19,17 @@
   (expand-path "~/Calibre Library")
   ;;=> "/Users/bchoomnuan/Calibre Library"
 
-  (expand-home "~/Calibre Library")
+  (fs/expand-home "~/Calibre Library")
   ;;=> #object[java.io.File 0x3fe7c8f6 "/Users/bchoomnuan/Calibre Library"]
 
   (let [dir
         #_"~/Calibre Library"
         "\"~/Calibre Library\""]
     (if-let [_ (re-find #"\"" dir)]
-      (format "\"%s\"" (expand-home (clojure.string/replace dir "\"" "")))
-      (expand-home dir)))
+      (format "\"%s\"" (fs/expand-home (clojure.string/replace dir "\"" "")))
+      (fs/expand-home dir)))
 
-  (normalized (expand-home "\"~/Calibre Library\"")))
+  (fs/normalized (fs/expand-home "\"~/Calibre Library\"")))
 
 (defn load-edn-config
   "Load the edn config from a given file."
@@ -94,12 +94,12 @@
 (defn write-json
   "Write data as JSON to file"
   [file data]
-  (write-value (io/file file) data (object-mapper {:pretty true})))
+  (json/write-value (io/file file) data (json/object-mapper {:pretty true})))
 
 (defn read-json
   "Read data as JSON from string or file"
   [file]
-  (read-value file (object-mapper {:decode-key-fn true})))
+  (json/read-value file (json/object-mapper {:decode-key-fn true})))
 
 (defn map-keys
   "Given a function and a map, returns the map resulting from applying
